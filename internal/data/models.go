@@ -16,6 +16,8 @@ var (
 // like a UserModel and PermissionModel, as our build progresses.
 type Models struct {
 	Movies MovieModel
+	Permissions PermissionModel
+	Tokens TokenModel
 	Users UserModel
 }
 
@@ -24,6 +26,8 @@ type Models struct {
 func NewModels(db *sql.DB) Models {
 	return Models{
 		Movies: MovieModel{DB: db},
+		Permissions: PermissionModel{DB: db},
+		Tokens: TokenModel{DB: db},
 		Users: UserModel{DB: db},
 	}
 }
